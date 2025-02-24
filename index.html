@@ -589,14 +589,12 @@
 </footer>
 
 <script>
-fetch('https://api.countapi.xyz/hit/your-site/unique-id')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('page-views').textContent = data.value;
-    })
-    .catch(error => {
-        console.error('Error fetching page views:', error);
-    });
+    // 閲覧回数のカウント
+    let pageViewCount = localStorage.getItem('pageViewCount') || 0;
+    pageViewCount++;
+    localStorage.setItem('pageViewCount', pageViewCount);
+    const pageViews = document.getElementById('page-views');
+    pageViews.textContent = pageViewCount;
 
 
     // 時間の更新
