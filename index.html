@@ -590,11 +590,12 @@
 
 <script>
     // 閲覧回数のカウント
-    let pageViewCount = localStorage.getItem('pageViewCount') || 0;
-    pageViewCount++;
-    localStorage.setItem('pageViewCount', pageViewCount);
-    const pageViews = document.getElementById('page-views');
-    pageViews.textContent = pageViewCount;
+let pageViewCount = localStorage.getItem('totalPageViewCount') || 0;
+pageViewCount++;
+localStorage.setItem('totalPageViewCount', pageViewCount);
+const pageViews = document.getElementById('page-views');
+pageViews.textContent = pageViewCount;
+
 
     // 時間の更新
     const currentTimeElem = document.getElementById('current-time');
