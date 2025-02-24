@@ -589,12 +589,13 @@
 </footer>
 
 <script>
-    // 閲覧回数のカウント
-let pageViewCount = localStorage.getItem('totalPageViewCount') || 0;
-pageViewCount++;
-localStorage.setItem('totalPageViewCount', pageViewCount);
-const pageViews = document.getElementById('page-views');
-pageViews.textContent = pageViewCount;
+fetch('https://your-server-url.com/get-page-views')
+    .then(response => response.json())
+    .then(data => {
+        const pageViews = document.getElementById('page-views');
+        pageViews.textContent = data.totalViews;  // サーバーからのレスポンスで累計閲覧回数を表示
+    })
+    .catch(error => console.error('エラー:', error));
 
 
     // 時間の更新
