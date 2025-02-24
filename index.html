@@ -1,3 +1,7 @@
+以下のコードに次のような変更点を加えて、変更箇所のみ出力してください。また、どこにどう入れらばいいかも教えてください。
+・「新しい記事」のタイトル背景同様のものを、「過去の記事はこちらから」のボックスの下にもう一つ配置したいです。
+・タイトルは「お知らせ」にしたいです。背景画像は「新しい記事」のタイトルと同じにしてください。
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -421,29 +425,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        .past-article-title {
-    font-size: 2rem;  /* 初期のフォントサイズ */
-    text-align: center;
-    color: white;
-    background-image: url('適当画像 2025 01 23.png'); /* 背景画像 */
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-}
-
-@media (max-width: 768px) {
-    .past-article-title {
-        font-size: 1.5rem;  /* タイトルのフォントサイズを小さく調整 */
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .past-article-title {
-        font-size: 1.2rem;  /* より小さく調整 */
-        padding: 10px;
-    }
-}
 
         /* フッター */
         footer {
@@ -598,9 +579,6 @@
             過去の記事はこちらから
         </div>
     </div>
-    <div class="featured-article" id="news-title">
-    <div class="title">お知らせ</div>
-</div>
 </main>
 
 <footer>
@@ -621,7 +599,6 @@
     localStorage.setItem('pageViewCount', pageViewCount);
     const pageViews = document.getElementById('page-views');
     pageViews.textContent = pageViewCount;
-
 
     // 時間の更新
     const currentTimeElem = document.getElementById('current-time');
@@ -646,7 +623,7 @@
     const totalSlides = document.querySelectorAll('.carousel-images a').length;
 
     function updateCarousel() {
-        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        carouselImages.style.transform = translateX(-${currentIndex * 100}%);
     }
 
     prevButton.addEventListener('click', () => {
