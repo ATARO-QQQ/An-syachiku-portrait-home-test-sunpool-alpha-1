@@ -589,13 +589,14 @@
 </footer>
 
 <script>
-fetch('https://ataro-qqq.github.io/An-syachiku-portrait-home-test-sunpool-alpha-1/')
+fetch('https://api.countapi.xyz/hit/your-site/unique-id')
     .then(response => response.json())
     .then(data => {
-        const pageViews = document.getElementById('page-views');
-        pageViews.textContent = data.totalViews;  // サーバーからのレスポンスで累計閲覧回数を表示
+        document.getElementById('page-views').textContent = data.value;
     })
-    .catch(error => console.error('エラー:', error));
+    .catch(error => {
+        console.error('Error fetching page views:', error);
+    });
 
 
     // 時間の更新
